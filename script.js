@@ -67,7 +67,7 @@ function addSet2() {
   const child1 = document.createElement("div");
   child1.innerHTML = `
      <div class="headingBarOnResume">
-      <div class = "headingOnResume">Education</div>
+      <div class = "headingOnResume">EDUCATION</div>
       <div class="lineHolder">
         <div class = "lineBesideHeading"></div>
       </div>
@@ -92,5 +92,61 @@ function addSet2() {
      </div>
   `;
   resume.appendChild(child3);
+
+  //we modified resume but we still did not modify the options
+  const optionsToAdd = document.getElementById("optionsToAdd");
+  optionsToAdd.innerHTML = `
+         <div class="headings">
+            Programming Languages you know
+          </div>
+          <div class="inputElements">
+            <textarea id="allProgrammingLangs" cols="70" rows="5" placeholder="Enter all programming languages you know"></textarea>
+          </div>
+          <div class="headings">
+            Technologies
+          </div>
+          <div class="inputElements">
+            <textarea id="allTechnologies" cols="70" rows="5" placeholder="Enter all technologies you know"></textarea>
+          </div>
+          <div class="buttonElement">
+            <button onclick="addSet3()">Add</button>
+          </div>
+  `;
+  currentSet++;
+}
+
+function addSet3() {
+  let allProgrammingLanguages = document.getElementById("allProgrammingLangs").value;
+  let arrayOfLanguages = allProgrammingLanguages.split(", ");
+  const child1 = document.createElement("div");
+  child1.innerHTML = `
+     <div class="headingBarOnResume">
+      <div class = "headingOnResume">SKILLS</div>
+      <div class="lineHolder">
+        <div class = "lineBesideHeading"></div>
+      </div>
+    </div>
+  `;
+  const resume = document.getElementById("rightPart");
+  resume.appendChild(child1);
+  const child2 = document.createElement("div");
+  child2.innerHTML = `
+     <div class="skillsBar">
+      <div style="flex: 1">
+       Programming Languages
+      </div>
+      <div id="allProgrammingLanguages" class="allProgrammingLanguages">
+       
+      </div>
+     </div>
+  `;
+  resume.appendChild(child2);
+  const containerOfAllProgrammingLanguages = document.getElementById("allProgrammingLanguages");
+  arrayOfLanguages.forEach(function(val) {
+    const tempChild = document.createElement("div");
+    tempChild.innerHTML = `${val}`;
+    tempChild.setAttribute("class", "language");
+    containerOfAllProgrammingLanguages.appendChild(tempChild);
+  });
 
 }

@@ -102,13 +102,35 @@ button {
   padding-left: 20px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 }
 
 .uniNameOnResume {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .locationOnResume {
   font-size: 13px;
 }
+
+textarea {
+  border-radius: 10px;
+}
+
+.skillsBar {
+  padding-left: 20px;
+  display: flex;
+  margin-bottom: 6px;
+}
+
+.allProgrammingLanguages {
+  display: flex;
+  flex: 2;
+}
+
+.language {
+  padding-right: 10px;
+  margin-left: 10px;
+  border-right: 1px solid red;
+}
+
