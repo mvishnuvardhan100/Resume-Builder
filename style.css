@@ -134,3 +134,29 @@ textarea {
   border-right: 1px solid red;
 }
 
+.allTechnologiesOnResueme {
+  display: flex;
+  flex: 2;
+}
+
+.technology {
+  padding-right: 10px;
+  margin-left: 10px;
+  border-right: 1px solid red;
+}
+
+.experienceBar {
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.roleOnResume {
+  font-size: 12px;
+}
+
+.contributionOnResume {
+  padding-left: 40px;
+}
+

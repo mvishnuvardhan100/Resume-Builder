@@ -118,6 +118,8 @@ function addSet2() {
 function addSet3() {
   let allProgrammingLanguages = document.getElementById("allProgrammingLangs").value;
   let arrayOfLanguages = allProgrammingLanguages.split(", ");
+  let allTechnologies = document.getElementById("allTechnologies").value;
+  let arrayOfTechnologies = allTechnologies.split(", ");
   const child1 = document.createElement("div");
   child1.innerHTML = `
      <div class="headingBarOnResume">
@@ -148,5 +150,112 @@ function addSet3() {
     tempChild.setAttribute("class", "language");
     containerOfAllProgrammingLanguages.appendChild(tempChild);
   });
+  const child3 = document.createElement("div");
+  child3.innerHTML = `
+     <div class="skillsBar">
+      <div style="flex: 1">
+       Technologies
+      </div>
+      <div id="allTechnologiesOnResueme" class="allTechnologiesOnResueme">
+       
+      </div>
+     </div>
+  `;
+  resume.appendChild(child3);
+  const containerOfAllTechnologies = document.getElementById("allTechnologiesOnResueme");
+  arrayOfTechnologies.forEach(function(val) {
+    const tempChild = document.createElement("div");
+    tempChild.setAttribute("class", "technology");
+    tempChild.innerHTML = `${val}`;
+    containerOfAllTechnologies.appendChild(tempChild);
+  });
 
+  //we modified resume but we still did not modify the options
+  optionsToAdd.innerHTML = `
+         <div class="headings">
+            Name of the company
+          </div>
+          <div class="inputElements">
+            <input id="companyName" type="text" placeholder="Enter the name of the company">
+          </div>
+          <div class="headings">
+            Role
+          </div>
+          <div class="inputElements">
+            <input id="role" type="text" placeholder="Enter your role">
+          </div>
+          <div class="headings">
+            Starting Year
+          </div>
+          <div class="inputElements">
+            <input id="startingYear" type="number" placeholder="Enter starting year">
+          </div>
+          <div class="headings">
+            Ending Year
+          </div>
+          <div class="inputElements">
+            <input id="endingYear" type="number" placeholder="Enter ending year">
+          </div>
+          <div class="headings">
+            Location
+          </div>
+          <div class="inputElements">
+            <input id="companyLocation" type="text" placeholder="Enter company location">
+          </div>
+          <div class="headings">
+            Your contribution
+          </div>
+          <div class="inputElements">
+            <textarea id="contribution" cols="70" rows="10" placeholder="Enter your contibution to the company"></textarea>
+          </div>
+          <div class="headings">
+            Add to Resume
+          </div>
+          <div class="buttonElement">
+            <button onclick="addSet4()">Add</button>
+          </div>
+
+  `;
+  currentSet++;
 }
+
+function addSet4() {
+  let companyName = document.getElementById("companyName").value;
+  let startingYear = document.getElementById("startingYear").value;
+  let endingYear = document.getElementById("endingYear").value;
+  let location = document.getElementById("companyLocation").value;
+  let role = document.getElementById("role").value;
+  let contribution = document.getElementById("contribution").value;
+  const child1 = document.createElement("div");
+  child1.innerHTML = `
+     <div class="headingBarOnResume">
+      <div class = "headingOnResume">EXPERIENCE</div>
+      <div class="lineHolder">
+        <div class = "lineBesideHeading"></div>
+      </div>
+    </div>
+  `;
+  const resume = document.getElementById("rightPart");
+  resume.appendChild(child1);
+  const child2 = document.createElement("div");
+  child2.innerHTML = `
+     <div class="experienceBar">
+      <div class="companyNameOnResume">${companyName}</div>
+      <div class="durationOfJob">${startingYear} - ${endingYear}</div>
+     </div>
+  `;
+  resume.appendChild(child2);
+  const child3 = document.createElement("div");
+  child3.innerHTML = `
+     <div class="experienceBar">
+      <div class="roleOnResume">${role}</div>
+      <div class="locationOnResume">${location}</div>
+     </div>
+  `;
+  resume.appendChild(child3);
+  const child4 = document.createElement("div");
+  child4.setAttribute("class", "contributionOnResume");
+  child4.innerHTML = contribution.replace(/\n/g, "<br>"); //one new learning
+  resume.appendChild(child4);
+}
+
