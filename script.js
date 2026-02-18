@@ -391,7 +391,68 @@ function addSet5() {
 
   `;
   currentSet++;
+}
 
+function addSet6() {
+  let projectName = document.getElementById("projectName").value;
+  let startingYear = document.getElementById("startingYear").value;
+  let endingYear = document.getElementById("endingYear").value;
+  let location = document.getElementById("companyLocation").value;
+  let role = document.getElementById("role").value;
+  let contribution = document.getElementById("contribution").value;
+  const child2 = document.createElement("div");
+  child2.innerHTML = `
+     <div class="projectBar">
+      <div class="projectNameOnResume">${projectName}</div>
+      <div class="durationOfProject">${startingYear} - ${endingYear}</div>
+     </div>
+  `;
+  const resume = document.getElementById("rightPart");
+  resume.appendChild(child2);
+  const child3 = document.createElement("div");
+  child3.innerHTML = `
+     <div class="projectBar">
+      <div class="roleOnResume">${role}</div>
+      <div class="locationOnResume">${location}</div>
+     </div>
+  `;
+  resume.appendChild(child3);
+  const child4 = document.createElement("div");
+  child4.setAttribute("class", "contributionOnResume");
+  child4.innerHTML = contribution.replace(/\n/g, "<br>"); //one new learning
+  resume.appendChild(child4);
+  optionsToAdd.innerHTML = `
+   <div class="headings">
+     Click to see total resume
+   </div>
+   <div class="buttonElement">
+     <button onclick="addSet7()">Total Resume</button>
+   </div>
+`;
+ currentSet++;
+}
 
+function addSet7() {
+  const child1 = document.createElement("div");
+  child1.innerHTML = `
+     <div class="headingBarOnResume">
+      <div class = "headingOnResume">PUPLICATIONS</div>
+      <div class="lineHolder">
+        <div class = "lineBesideHeading"></div>
+      </div>
+    </div>
+  `;
+  let resume = document.getElementById("rightPart");
+  resume.appendChild(child1);
+  const child4 = document.createElement("div");
+  child4.setAttribute("class", "contributionOnResumePublication");
+  child4.innerHTML = `Vijay and FirstName LastName, “Super Awesome Modification for UAV Control Systems,” 2020 International Conference on Super Cool Stuff (ICSCS), Paris, France.`
+  resume.appendChild(child4);
+  optionsToAdd.innerHTML = `
+   <div class="headings">
+     Thanks a lot
+   </div>
+  `;
+  currentSet++;
 }
 
