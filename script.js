@@ -257,5 +257,141 @@ function addSet4() {
   child4.setAttribute("class", "contributionOnResume");
   child4.innerHTML = contribution.replace(/\n/g, "<br>"); //one new learning
   resume.appendChild(child4);
+
+   //we modified resume but we still did not modify the options
+   optionsToAdd.innerHTML = `
+         <div class="headings">
+            Name of the project
+          </div>
+          <div class="inputElements">
+            <input id="projectName" type="text" placeholder="Enter the name of the project">
+          </div>
+          <div class="headings">
+            Starting Year
+          </div>
+          <div class="inputElements">
+            <input id="startingYear" type="number" placeholder="Enter starting year">
+          </div>
+          <div class="headings">
+            Ending Year
+          </div>
+          <div class="inputElements">
+            <input id="endingYear" type="number" placeholder="Enter ending year">
+          </div>
+          <div class="headings">
+            Role
+          </div>
+          <div class="inputElements">
+            <input id="role" type="text" placeholder="Enter your role">
+          </div>
+          <div class="headings">
+            Location
+          </div>
+          <div class="inputElements">
+            <input id="companyLocation" type="text" placeholder="Enter company location">
+          </div>
+          <div class="headings">
+            Your contribution
+          </div>
+          <div class="inputElements">
+            <textarea id="contribution" cols="70" rows="10" placeholder="Enter your contibution to the company"></textarea>
+          </div>
+          <div class="headings">
+            Add to Resume
+          </div>
+          <div class="buttonElement">
+            <button onclick="addSet5()">Add</button>
+          </div>
+
+  `;
+  currentSet++;
+}
+
+function addSet5() {
+  let projectName = document.getElementById("projectName").value;
+  let startingYear = document.getElementById("startingYear").value;
+  let endingYear = document.getElementById("endingYear").value;
+  let location = document.getElementById("companyLocation").value;
+  let role = document.getElementById("role").value;
+  let contribution = document.getElementById("contribution").value;
+  const child1 = document.createElement("div");
+  child1.innerHTML = `
+     <div class="headingBarOnResume">
+      <div class = "headingOnResume">NOTABLE PROJECTS</div>
+      <div class="lineHolder">
+        <div class = "lineBesideHeading"></div>
+      </div>
+    </div>
+  `;
+  const resume = document.getElementById("rightPart");
+  resume.appendChild(child1);
+  const child2 = document.createElement("div");
+  child2.innerHTML = `
+     <div class="projectBar">
+      <div class="projectNameOnResume">${projectName}</div>
+      <div class="durationOfProject">${startingYear} - ${endingYear}</div>
+     </div>
+  `;
+  resume.appendChild(child2);
+  const child3 = document.createElement("div");
+  child3.innerHTML = `
+     <div class="projectBar">
+      <div class="roleOnResume">${role}</div>
+      <div class="locationOnResume">${location}</div>
+     </div>
+  `;
+  resume.appendChild(child3);
+  const child4 = document.createElement("div");
+  child4.setAttribute("class", "contributionOnResume");
+  child4.innerHTML = contribution.replace(/\n/g, "<br>"); //one new learning
+  resume.appendChild(child4);
+  optionsToAdd.innerHTML = `
+         <div class="headings">
+            Name of the project
+          </div>
+          <div class="inputElements">
+            <input id="projectName" type="text" placeholder="Enter the name of the project">
+          </div>
+          <div class="headings">
+            Starting Year
+          </div>
+          <div class="inputElements">
+            <input id="startingYear" type="number" placeholder="Enter starting year">
+          </div>
+          <div class="headings">
+            Ending Year
+          </div>
+          <div class="inputElements">
+            <input id="endingYear" type="number" placeholder="Enter ending year">
+          </div>
+          <div class="headings">
+            Role
+          </div>
+          <div class="inputElements">
+            <input id="role" type="text" placeholder="Enter your role">
+          </div>
+          <div class="headings">
+            Location
+          </div>
+          <div class="inputElements">
+            <input id="companyLocation" type="text" placeholder="Enter company location">
+          </div>
+          <div class="headings">
+            Your contribution
+          </div>
+          <div class="inputElements">
+            <textarea id="contribution" cols="70" rows="10" placeholder="Enter your contibution to the company"></textarea>
+          </div>
+          <div class="headings">
+            Add to Resume
+          </div>
+          <div class="buttonElement">
+            <button onclick="addSet6()">Add</button>
+          </div>
+
+  `;
+  currentSet++;
+
+
 }
 

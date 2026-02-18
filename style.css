@@ -160,3 +160,18 @@ textarea {
   padding-left: 40px;
 }
 
+/* .durationOfProject {
+
+}
+
+.projectNameOnResume {
+
+} */
+
+.projectBar {
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
